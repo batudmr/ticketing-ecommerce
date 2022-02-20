@@ -1,4 +1,5 @@
 import express from 'express';
+import 'express-async-errors';
 import { currentUserRouter } from './routes/current-user';
 import { signInRouter } from './routes/signin';
 import { signOutRouter } from './routes/signout';
@@ -14,10 +15,12 @@ app.use(currentUserRouter);
 app.use(signInRouter);
 app.use(signOutRouter);
 app.use(signUpRouter);
-app.use(errorHandler);
-app.all('*', () => {
+
+app.all('*', async () => {
   throw new NotFoundError();
 });
+
+app.use(errorHandler);
 
 app.listen(3000, () => {
   console.log('Listening on 3000');
