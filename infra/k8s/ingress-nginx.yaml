@@ -17,7 +17,6 @@ spec:
                 name: auth-srv
                 port:
                   number: 3000
-        paths:
           - path: /?(.*)
             pathType: Prefix
             backend:
