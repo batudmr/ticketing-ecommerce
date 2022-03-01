@@ -5,8 +5,7 @@ import { signInRouter } from './routes/signin';
 import { signOutRouter } from './routes/signout';
 import { signUpRouter } from './routes/signup';
 import { json } from 'body-parser';
-import { errorHandler } from './middlewares/error-handler';
-import { NotFoundError } from './errors/not-found-error';
+import { errorHandler, NotFoundError } from '@ticketman/common';
 
 import cookieSession from 'cookie-session';
 
