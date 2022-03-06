@@ -32,7 +32,7 @@ afterAll(async () => {
 /* The logic also can be extracted to a seperate file to avoid global declaration. */
 global.signin = () => {
   const payload = {
-    id: 'asdasddas',
+    id: new mongoose.Types.ObjectId().toHexString(),
     email: 'test@test.com',
   };
 

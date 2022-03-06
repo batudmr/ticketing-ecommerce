@@ -23,12 +23,6 @@ router.post(
   async (req: Request, res: Response) => {
     const { title, price } = req.body;
 
-    const existingProduct = await Ticket.findOne({ title });
-
-    if (existingProduct) {
-      throw new BadRequestError('Email is in use');
-    }
-
     const ticket = Ticket.build({
       title,
       price,
